@@ -1,0 +1,11 @@
+{
+  "extends": ["@k.sh/eslint-config"],
+  "env": {
+    "node": true,
+    "browser": true
+  },
+  "parser": "babel-eslint",
+  "rules": {
+    "import/no-extraneous-dependencies": ["error", { "devDependencies": ["!src/*.js"] }]
+  }
+}
