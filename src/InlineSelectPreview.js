@@ -2,10 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { fonts, colorsRaw } from 'netlify-cms-ui-default';
 
-import { getOptions } from './utils';
+import { getOptions, getValue } from './utils';
 
-export default function InlineSelectPreview({ value, field }) {
+export default function InlineSelectPreview({ value: rawValue, field }) {
   const options = getOptions({ field });
+  const value = getValue(rawValue, { field });
   const values = Array.isArray(value) ? value : [value];
   const items = options.filter(optionsItem => values.find(item => item === optionsItem.value));
   const name = field.get('name');
