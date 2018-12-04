@@ -1,11 +1,15 @@
 {
   "name": "netlify-cms-widget-inline-select",
   "version": "0.0.0",
-  "description": "Widget to ...",
+  "description": "Widget for radios and inline multi-checkboxes in Netlify CMS.",
   "keywords": [
+    "checkbox",
     "cms",
+    "inline",
+    "multi",
     "netlify",
     "netlify-cms",
+    "radio",
     "widget"
   ],
   "homepage": "https://github.com/buz-zard/netlify-cms-widget-inline-select#readme",
@@ -20,12 +24,17 @@
   "author": "Karolis Šarapnickis",
   "main": "lib/index.js",
   "scripts": {
+    "build": "run-p build:*",
+    "build:demo": "webpack --display errors-only --devtool source-map --config webpack.dev.config.js",
+    "build:package": "babel src --out-dir lib --source-maps",
     "clean": "rimraf public",
     "format": "prettier --write '**/*.*' && sort-package-json",
     "lint": "run-p lint:*",
     "lint:js": "eslint .",
     "lint:md": "markdownlint README.md",
     "qa": "npm run lint",
+    "start": "webpack-serve --config webpack.dev.config.js --log-level error --open-path '/#/collections/test/entries/test'",
+    "try-demo": "run-s clean build:demo && serve public",
     "upgrade-interactive": "npm-check --update"
   },
   "husky": {
@@ -39,6 +48,10 @@
       "path": "cz-conventional-changelog"
     }
   },
+  "dependencies": {
+    "styled-components": "^4.1.2",
+    "uuid": "^3.3.2"
+  },
   "devDependencies": {
     "@babel/cli": "^7.1.5",
     "@babel/core": "^7.1.6",
@@ -48,6 +61,7 @@
     "@k.sh/eslint-config": "^1.6.0",
     "babel-eslint": "^10.0.1",
     "babel-loader": "^8.0.4",
+    "babel-plugin-styled-components": "^1.9.2",
     "cross-env": "^5.2.0",
     "css-loader": "^1.0.1",
     "cz-conventional-changelog": "^2.1.0",
@@ -55,6 +69,8 @@
     "husky": "^1.2.0",
     "lint-staged": "^8.1.0",
     "markdownlint-cli": "^0.13.0",
+    "netlify-cms": "^2.2.1",
+    "netlify-cms-ui-default": "^2.1.1",
     "npm-check": "^5.9.0",
     "npm-run-all": "^4.1.5",
     "prettier": "^1.15.3",
@@ -70,6 +86,7 @@
     "webpack-serve": "^2.0.3"
   },
   "peerDependencies": {
+    "netlify-cms-ui-default": "^2",
     "prop-types": "^15",
     "react": "^16"
   },

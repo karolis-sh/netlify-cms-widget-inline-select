@@ -2,7 +2,7 @@
 
 [Check out the demo!](https://netlify-cms-widget-inline-select.netlify.com/demo)
 
-🚧 UNDER CONSTRUCTION 🚧
+Inline radio + multi-checkboxes select widget.
 
 [![npm version][version-badge]][version]
 [![Build Status][build-badge]][build]
@@ -11,6 +11,8 @@
 [![semantic-release][semantic-release-badge]][semantic-release]
 [![module formats: cjs][module-formats-badge]][unpkg-bundle]
 [![code style: prettier][code-style-badge]][code-style]
+
+![preview](docs/preview.png)
 
 ## Install
 
@@ -31,9 +33,41 @@ CMS.registerWidget('inline-select', InlineSelectControl, InlineSelectPreview);
 Add to your Netlify CMS configuration:
 
 ```yaml
+fields:
+  - name: radio_select
+    label: Radio select
+    widget: inline-select
+    options: ['left', 'center', 'right']
 ```
 
 ## Configuration
+
+You can customize the preview of the url with these options:
+
+- `options` - you can also specify the `value` and `label` in `options` option
+
+```yaml
+fields:
+  - name: radio_select
+    label: Most recent framework
+    widget: inline-select
+    options:
+      - { value: react, label: React }
+      - { value: angular, label: Angular 1.x }
+      - { value: vue, label: Vue.js }
+      - { value: $, label: jQuery }
+```
+
+- `multiple` - add ability to select multiple items
+
+```yaml
+fields:
+  - name: checkboxes_select
+    label: Favorite frameworks
+    widget: inline-select
+    multiple: true
+    options: ['React', 'Angular', 'Vue', 'Other']
+```
 
 ## License
 
