@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { fonts, colorsRaw } from 'netlify-cms-ui-default';
+import { fonts, colorsRaw, WidgetPreviewContainer } from 'netlify-cms-ui-default';
 import ImmutablePropTypes from 'react-immutable-proptypes';
 
 import { getOptions, getValue } from './utils';
@@ -17,30 +17,31 @@ export default function InlineSelectPreview({ value: rawValue, field }) {
   }
 
   return (
-    <div
-      style={{
-        fontFamily: fonts.primary,
-        padding: '4px 2px',
-        margin: '2px -4px',
-        display: 'flex',
-        flexWrap: 'wrap',
-      }}
-    >
-      {items.map(item => (
-        <span
-          key={item.value}
-          style={{
-            padding: '4px 8px',
-            margin: '2px',
-            background: colorsRaw.grayLight,
-            borderRadius: '5px',
-            color: colorsRaw.grayDark,
-          }}
-        >
-          {item.label}
-        </span>
-      ))}
-    </div>
+    <WidgetPreviewContainer>
+      <div
+        style={{
+          fontFamily: fonts.primary,
+          margin: '0 -2px',
+          display: 'flex',
+          flexWrap: 'wrap',
+        }}
+      >
+        {items.map(item => (
+          <span
+            key={item.value}
+            style={{
+              padding: '4px 8px',
+              margin: '2px',
+              background: colorsRaw.grayLight,
+              borderRadius: '5px',
+              color: colorsRaw.grayDark,
+            }}
+          >
+            {item.label}
+          </span>
+        ))}
+      </div>
+    </WidgetPreviewContainer>
   );
 }
 
