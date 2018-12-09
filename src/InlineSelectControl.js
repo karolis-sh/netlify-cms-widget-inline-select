@@ -57,6 +57,7 @@ export default class InlineSelectControl extends React.Component {
           css={`
             display: flex;
             flex-wrap: wrap;
+            word-break: break-all;
           `}
         >
           {options.map(item => (
