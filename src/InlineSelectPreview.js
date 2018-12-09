@@ -19,6 +19,7 @@ export default function InlineSelectPreview({ value: rawValue, field }) {
   return (
     <WidgetPreviewContainer>
       <div
+        className="netlify-cms-widget-inline-select-preview"
         style={{
           fontFamily: fonts.primary,
           margin: '0 -2px',
@@ -29,6 +30,7 @@ export default function InlineSelectPreview({ value: rawValue, field }) {
         {items.map(item => (
           <span
             key={item.value}
+            className="netlify-cms-widget-inline-select-preview__badge"
             style={{
               padding: '4px 8px',
               margin: '2px',
