@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { fonts, colorsRaw } from 'netlify-cms-ui-default';
+import ImmutablePropTypes from 'react-immutable-proptypes';
 
 import { getOptions, getValue } from './utils';
 
@@ -44,7 +45,11 @@ export default function InlineSelectPreview({ value: rawValue, field }) {
 }
 
 InlineSelectPreview.propTypes = {
-  value: PropTypes.oneOfType([PropTypes.string, PropTypes.arrayOf(PropTypes.string)]),
+  value: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.arrayOf(PropTypes.string),
+    ImmutablePropTypes.listOf(PropTypes.string),
+  ]),
   field: PropTypes.shape({
     get: PropTypes.func.isRequired,
   }).isRequired,
