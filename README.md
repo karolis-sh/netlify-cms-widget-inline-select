@@ -6,13 +6,15 @@ Inline radio + multi-checkboxes select widget.
 
 [![npm version][version-badge]][version]
 [![Build Status][build-badge]][build]
+[![module formats: cjs][module-formats-badge]][unpkg-bundle]
 [![License: MIT][license-badge]][license]
 
 [![semantic-release][semantic-release-badge]][semantic-release]
-[![module formats: cjs][module-formats-badge]][unpkg-bundle]
 [![code style: prettier][code-style-badge]][code-style]
 
 ![preview](docs/preview.png)
+
+This widget was inspired by original [netlify-cms-widget-select][netlify-cms-widget-select].
 
 ## Install
 
@@ -90,3 +92,4 @@ or ask the Netlify CMS community in [Gitter](https://gitter.im/netlify/netlifycm
 [code-style]: https://github.com/prettier/prettier
 [module-formats-badge]: https://img.shields.io/badge/module%20formats-cjs-green.svg
 [unpkg-bundle]: https://unpkg.com/netlify-cms-widget-inline-select/lib/
+[netlify-cms-widget-select]: https://www.npmjs.com/package/netlify-cms-widget-select

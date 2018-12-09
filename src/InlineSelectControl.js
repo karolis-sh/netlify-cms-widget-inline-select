@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import ImmutablePropTypes from 'react-immutable-proptypes';
 
 import { getOptions, getValue } from './utils';
 import Option from './Option';
@@ -57,6 +58,7 @@ export default class InlineSelectControl extends React.Component {
           css={`
             display: flex;
             flex-wrap: wrap;
+            word-break: break-all;
           `}
         >
           {options.map(item => (
@@ -77,7 +79,11 @@ export default class InlineSelectControl extends React.Component {
 
 InlineSelectControl.propTypes = {
   classNameWrapper: PropTypes.string.isRequired,
-  value: PropTypes.string,
+  value: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.arrayOf(PropTypes.string),
+    ImmutablePropTypes.listOf(PropTypes.string),
+  ]),
   onChange: PropTypes.func.isRequired,
   field: PropTypes.shape({
     get: PropTypes.func.isRequired,

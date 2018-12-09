@@ -47,6 +47,7 @@ export default class Option extends React.Component {
             type={multiple ? 'checkbox' : 'radio'}
             name={name}
             checked={selected}
+            onChange={() => null}
             onClick={() => onChange()}
           />
           <span>{label}</span>

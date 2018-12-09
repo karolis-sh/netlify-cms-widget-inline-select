@@ -26,15 +26,16 @@
   "scripts": {
     "build": "run-p build:*",
     "build:demo": "webpack --display errors-only --devtool source-map --config webpack.dev.config.js",
-    "build:package": "babel src --out-dir lib --source-maps",
+    "build:package": "babel src --out-dir lib --source-maps --ignore *.test.js",
     "clean": "rimraf public",
     "format": "prettier --write '**/*.*' && sort-package-json",
     "lint": "run-p lint:*",
     "lint:js": "eslint .",
     "lint:md": "markdownlint README.md",
-    "qa": "npm run lint",
+    "qa": "run-p lint test",
     "semantic-release": "semantic-release",
     "start": "webpack-serve --config webpack.dev.config.js --log-level error --open-path '/#/collections/test/entries/test'",
+    "test": "jest",
     "travis-deploy-once": "travis-deploy-once",
     "try-demo": "run-s clean build:demo && serve public",
     "upgrade-interactive": "npm-check --update"
@@ -50,6 +51,12 @@
       "path": "cz-conventional-changelog"
     }
   },
+  "jest": {
+    "moduleNameMapper": {
+      "^~/(.*)$": "<rootDir>/src/$1"
+    },
+    "testRegex": "src/.+\\.test\\.js$"
+  },
   "dependencies": {
     "styled-components": "^4.1.2",
     "uuid": "^3.3.2"
@@ -61,7 +68,9 @@
     "@babel/preset-env": "^7.1.6",
     "@babel/preset-react": "^7.0.0",
     "@k.sh/eslint-config": "^1.6.0",
+    "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "^10.0.1",
+    "babel-jest": "^23.6.0",
     "babel-loader": "^8.0.4",
     "babel-plugin-styled-components": "^1.9.2",
     "cross-env": "^5.2.0",
@@ -69,6 +78,9 @@
     "cz-conventional-changelog": "^2.1.0",
     "html-webpack-plugin": "^3.2.0",
     "husky": "^1.2.0",
+    "immutable": "^4.0.0-rc.12",
+    "jest": "^23.6.0",
+    "jest-dom": "^3.0.0",
     "lint-staged": "^8.1.0",
     "markdownlint-cli": "^0.13.0",
     "netlify-cms": "^2.2.1",
@@ -78,6 +90,8 @@
     "prettier": "^1.15.3",
     "pretty-quick": "^1.8.0",
     "react": "^16.6.3",
+    "react-immutable-proptypes": "^2.1.0",
+    "react-testing-library": "^5.3.1",
     "rimraf": "^2.6.2",
     "semantic-release": "^15.12.4",
     "serve": "^10.1.1",
@@ -92,7 +106,8 @@
   "peerDependencies": {
     "netlify-cms-ui-default": "^2",
     "prop-types": "^15",
-    "react": "^16"
+    "react": "^16",
+    "react-immutable-proptypes": "^2"
   },
   "lint-staged": {
     "package.json": [
