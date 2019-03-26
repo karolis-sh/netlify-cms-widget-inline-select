@@ -1,5 +1,5 @@
 import './bootstrap';
-import CMS, { init } from 'netlify-cms';
+import { init, registerWidget } from 'netlify-cms';
 import 'netlify-cms/dist/cms.css';
 import { InlineSelectControl, InlineSelectPreview } from '../src';
 
@@ -77,6 +77,6 @@ const config = {
   ],
 };
 
-CMS.registerWidget('inline-select', InlineSelectControl, InlineSelectPreview);
+registerWidget('inline-select', InlineSelectControl, InlineSelectPreview);
 
 init({ config });
