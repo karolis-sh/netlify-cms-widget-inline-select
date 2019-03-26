@@ -36,7 +36,6 @@
     "semantic-release": "semantic-release",
     "start": "webpack-serve --config webpack.dev.config.js --log-level error --open-path '/#/collections/test/entries/test'",
     "test": "jest",
-    "travis-deploy-once": "travis-deploy-once",
     "try-demo": "run-s clean build:demo && serve public",
     "upgrade-interactive": "npm-check --update"
   },
@@ -94,12 +93,11 @@
     "react": "^16.7.0",
     "react-testing-library": "^5.4.4",
     "rimraf": "^2.6.3",
-    "semantic-release": "^15.13.2",
+    "semantic-release": "^15.13.3",
     "serve": "^10.1.1",
     "sort-package-json": "^1.17.1",
     "source-map-loader": "^0.2.4",
     "style-loader": "^0.23.1",
-    "travis-deploy-once": "^5.0.11",
     "webpack": "^4.28.3",
     "webpack-cli": "^3.2.0",
     "webpack-serve": "^2.0.3"
