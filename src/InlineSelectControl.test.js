@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { fromJS } from 'immutable';
-import { render, fireEvent } from 'react-testing-library';
-import 'react-testing-library/cleanup-after-each';
-import 'jest-dom/extend-expect';
+import { render, fireEvent } from '@testing-library/react';
+// import 'react-testing-library/cleanup-after-each';
+import '@testing-library/jest-dom/extend-expect';
 import InlineSelectControl from './InlineSelectControl';
 
 const options = [
