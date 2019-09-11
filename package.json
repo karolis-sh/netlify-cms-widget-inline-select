@@ -65,9 +65,9 @@
   },
   "dependencies": {
     "netlify-cms-ui-default": "^2.6.4",
-    "prop-types": "^15.6.2",
+    "prop-types": "^15.7.2",
     "react-immutable-proptypes": "^2.1.0",
-    "uuid": "^3.3.2"
+    "uuid": "^3.3.3"
   },
   "devDependencies": {
     "@babel/cli": "^7.6.0",
