@@ -12,13 +12,13 @@
     "radio",
     "widget"
   ],
-  "homepage": "https://github.com/buz-zard/netlify-cms-widget-inline-select#readme",
+  "homepage": "https://github.com/karolis-sh/netlify-cms-widget-inline-select#readme",
   "bugs": {
-    "url": "https://github.com/buz-zard/netlify-cms-widget-inline-select/issues"
+    "url": "https://github.com/karolis-sh/netlify-cms-widget-inline-select/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/buz-zard/netlify-cms-widget-inline-select.git"
+    "url": "git+https://github.com/karolis-sh/netlify-cms-widget-inline-select.git"
   },
   "license": "MIT",
   "author": "Karolis Šarapnickis",
