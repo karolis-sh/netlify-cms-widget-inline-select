@@ -65,7 +65,7 @@
     }
   },
   "dependencies": {
-    "netlify-cms-ui-default": "^2.11.6",
+    "netlify-cms-ui-default": "2.11.6",
     "prop-types": "^15.7.2",
     "react-immutable-proptypes": "^2.2.0"
   },
