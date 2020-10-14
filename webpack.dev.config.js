@@ -11,17 +11,17 @@ module.exports = {
     rules: [
       {
         test: /\.js$/,
-        loader: 'source-map-loader',
+        use: 'source-map-loader',
         enforce: 'pre',
       },
       {
         test: /\.jsx?$/,
         exclude: /node_modules/,
-        loader: 'babel-loader',
+        use: 'babel-loader',
       },
       {
         test: /\.css$/,
-        loader: ['style-loader', 'css-loader'],
+        use: ['style-loader', 'css-loader'],
       },
     ],
   },
