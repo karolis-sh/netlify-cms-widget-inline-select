@@ -36,26 +36,23 @@
     "semantic-release": "semantic-release",
     "start": "webpack serve --config webpack.dev.config.js",
     "test": "jest",
-    "try-demo": "run-s clean build:demo && serve public",
-    "upgrade-interactive": "npm-check --update"
+    "try-demo": "run-s clean build:demo && serve public"
   },
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged",
-      "pre-push": "npm run qa"
+      "pre-push": "yarn qa"
     }
   },
   "lint-staged": {
     "*.js": [
-      "eslint --fix",
-      "git add"
+      "eslint --fix"
     ],
-    "*.{md,json,babelrc}": [
+    "*.{md,json}": [
       "pretty-quick --staged"
     ],
     "package.json": [
-      "sort-package-json",
-      "git add"
+      "sort-package-json"
     ]
   },
   "config": {
@@ -92,7 +89,6 @@
     "lint-staged": "^10.4.0",
     "markdownlint-cli": "^0.24.0",
     "netlify-cms": "^2.10.63",
-    "npm-check": "^5.9.2",
     "npm-run-all": "^4.1.5",
     "prettier": "^2.1.2",
     "pretty-quick": "^3.1.0",

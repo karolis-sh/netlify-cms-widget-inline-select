@@ -4,11 +4,10 @@
 !*.md
 !.babelrc
 
-# Build products
-/lib
-/public
-
 # npm files
 node_modules
 package.json
-package-lock.json
+
+# project
+/lib
+/public
