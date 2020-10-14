@@ -13,7 +13,7 @@ const options = [
 ];
 
 class InlineSelectController extends React.Component {
-  handleOnChange = jest.fn(value => {
+  handleOnChange = jest.fn((value) => {
     this.setState({ value });
   });
 

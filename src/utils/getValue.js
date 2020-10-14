@@ -1,4 +1,4 @@
-const convertValue = value => {
+const convertValue = (value) => {
   if (!value) return value;
 
   if (typeof value.toJS === 'function') {
