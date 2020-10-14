@@ -29,6 +29,7 @@
     "build:package": "babel src --out-dir lib --source-maps --ignore *.test.js",
     "clean": "rm -rf public",
     "commit": "npx cz",
+    "dev": "webpack serve --config webpack.dev.config.js",
     "format": "run-p format:*",
     "format:package.json": "sort-package-json package.json",
     "format:prettier": "prettier --write '**/*.*'",
@@ -37,7 +38,6 @@
     "lint:md": "markdownlint-cli2 '**/*.md' '!node_modules' '!**/node_modules'",
     "qa": "run-p lint test",
     "semantic-release": "semantic-release",
-    "start": "webpack serve --config webpack.dev.config.js",
     "test": "jest",
     "try": "run-s clean build:demo && serve public"
   },
@@ -64,10 +64,9 @@
     }
   },
   "dependencies": {
-    "netlify-cms-ui-default": "^2.6.4",
+    "netlify-cms-ui-default": "^2.11.6",
     "prop-types": "^15.7.2",
-    "react-immutable-proptypes": "^2.1.0",
-    "uuid": "^3.3.3"
+    "react-immutable-proptypes": "^2.2.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.11.6",

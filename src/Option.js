@@ -1,12 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import uuid from 'uuid/v4';
+
 import { colorsRaw } from 'netlify-cms-ui-default';
+
+import { NAME } from './constants';
+import { getGUID } from './utils';
 
 export default class Option extends React.Component {
   constructor(props) {
     super(props);
-    this.id = uuid();
+    this.id = getGUID();
   }
 
   render() {
@@ -14,45 +17,43 @@ export default class Option extends React.Component {
     const id = `${this.id}_${value}`;
 
     return (
-      <span
-        css={`
-          padding: 2px 6px;
-          margin: 2px;
-          color: ${selected ? 'white' : 'inherit'};
-          background-color: ${selected ? colorsRaw.blue : colorsRaw.grayLight};
-          border: 2px solid transparent;
-          border-radius: 5px;
-
-          :hover {
-            border-color: ${selected ? 'transparent' : colorsRaw.blue};
-            color: ${selected ? 'white' : colorsRaw.blue};
-          }
-        `}
-      >
-        <label
-          htmlFor={id}
-          css={`
-            cursor: pointer;
-            padding-right: 2px;
-            display: flex;
-            align-items: center;
-
-            > input {
-              margin-right: 6px;
-            }
-          `}
+      <>
+        <style>{`.${NAME}__option:hover { filter: invert(15%); }`}</style>
+        <span
+          className={`${NAME}__option`}
+          style={{
+            padding: '2px 6px',
+            margin: 2,
+            color: selected ? 'white' : 'inherit',
+            backgroundColor: selected ? colorsRaw.blue : colorsRaw.grayLight,
+            border: '2px solid transparent',
+            borderRadius: 5,
+          }}
         >
-          <input
-            id={id}
-            type={multiple ? 'checkbox' : 'radio'}
-            name={name}
-            checked={selected}
-            onChange={() => null}
-            onClick={() => onChange()}
-          />
-          <span>{label}</span>
-        </label>
-      </span>
+          <label
+            htmlFor={id}
+            style={{
+              cursor: 'pointer',
+              paddingRight: 2,
+              display: 'flex',
+              alignItems: 'center',
+            }}
+          >
+            <input
+              id={id}
+              style={{
+                marginRight: 6,
+              }}
+              type={multiple ? 'checkbox' : 'radio'}
+              name={name}
+              checked={selected}
+              onChange={() => null}
+              onClick={() => onChange()}
+            />
+            <span>{label}</span>
+          </label>
+        </span>
+      </>
     );
   }
 }
