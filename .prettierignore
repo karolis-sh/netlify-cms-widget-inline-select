@@ -2,7 +2,6 @@
 !*.js
 !*.json
 !*.md
-!.babelrc
 
 # npm files
 node_modules
