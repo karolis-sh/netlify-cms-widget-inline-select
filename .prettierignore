@@ -1,7 +1,9 @@
-*.*
+*
+!*/
 !*.js
 !*.json
 !*.md
+!*.yml
 
 # npm files
 node_modules

@@ -51,7 +51,7 @@
     "*.js": [
       "eslint --fix"
     ],
-    "*.{md,json}": [
+    "*.{md,json,yml}": [
       "pretty-quick --staged"
     ],
     "package.json": [
