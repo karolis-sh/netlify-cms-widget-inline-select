@@ -1,14 +1,14 @@
-*.*
+*
+!*/
 !*.js
 !*.json
 !*.md
-!.babelrc
-
-# Build products
-/lib
-/public
+!*.yml
 
 # npm files
 node_modules
 package.json
-package-lock.json
+
+# project
+/lib
+/public

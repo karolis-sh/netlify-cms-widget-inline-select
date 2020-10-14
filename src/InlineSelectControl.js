@@ -16,7 +16,7 @@ export default class InlineSelectControl extends React.Component {
     return getValue(value, { field });
   };
 
-  isSelectedOption = itemValue => {
+  isSelectedOption = (itemValue) => {
     const value = this.getValue();
     const isMultiple = this.isMultiple();
 
@@ -26,7 +26,7 @@ export default class InlineSelectControl extends React.Component {
     return !!(value && value === itemValue);
   };
 
-  onToggleChange = itemValue => {
+  onToggleChange = (itemValue) => {
     const { onChange } = this.props;
     const value = this.getValue();
     const isMultiple = this.isMultiple();
@@ -34,7 +34,7 @@ export default class InlineSelectControl extends React.Component {
 
     if (isMultiple) {
       onChange(
-        isCurrentlySelected ? value.filter(item => item !== itemValue) : [...value, itemValue]
+        isCurrentlySelected ? value.filter((item) => item !== itemValue) : [...value, itemValue]
       );
     } else {
       onChange(isCurrentlySelected ? undefined : itemValue);
@@ -55,13 +55,13 @@ export default class InlineSelectControl extends React.Component {
     return (
       <div className={classNameWrapper}>
         <div
-          css={`
-            display: flex;
-            flex-wrap: wrap;
-            word-break: break-all;
-          `}
+          style={{
+            display: 'flex',
+            flexWrap: 'wrap',
+            wordBreak: 'break-all',
+          }}
         >
-          {options.map(item => (
+          {options.map((item) => (
             <Option
               {...item}
               key={item.value}

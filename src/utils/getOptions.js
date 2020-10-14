@@ -1,9 +1,9 @@
-const logError = value => {
+const logError = (value) => {
   console.error(`Provided options are not an array - "${JSON.stringify(value)}"`);
 };
 
-const mapOptions = list =>
-  list.map(item => (typeof item === 'string' ? { label: item, value: item } : item));
+const mapOptions = (list) =>
+  list.map((item) => (typeof item === 'string' ? { label: item, value: item } : item));
 
 export default ({ field }) => {
   const options = field.get('options');

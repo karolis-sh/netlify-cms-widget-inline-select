@@ -9,7 +9,7 @@ export default function InlineSelectPreview({ value: rawValue, field }) {
   const options = getOptions({ field });
   const value = getValue(rawValue, { field });
   const values = Array.isArray(value) ? value : [value];
-  const items = options.filter(optionsItem => values.find(item => item === optionsItem.value));
+  const items = options.filter((optionsItem) => values.find((item) => item === optionsItem.value));
   const name = field.get('name');
 
   if (options.length === 0) {
@@ -27,7 +27,7 @@ export default function InlineSelectPreview({ value: rawValue, field }) {
           flexWrap: 'wrap',
         }}
       >
-        {items.map(item => (
+        {items.map((item) => (
           <span
             key={item.value}
             className="netlify-cms-widget-inline-select-preview__badge"
