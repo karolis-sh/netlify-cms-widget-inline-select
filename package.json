@@ -109,5 +109,9 @@
   "peerDependencies": {
     "netlify-cms": ">2.8",
     "react": "^16"
+  },
+  "volta": {
+    "node": "12.16.1",
+    "yarn": "1.22.11"
   }
 }
