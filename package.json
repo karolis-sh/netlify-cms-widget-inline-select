@@ -24,10 +24,12 @@
   "author": "Karolis Šarapnickis",
   "main": "lib/cjs/index.js",
   "module": "lib/es/index.js",
+  "browser": "lib/umd/main.js",
   "scripts": {
     "build": "run-p build:*",
     "build:demo": "webpack --devtool source-map --config webpack.dev.config.js",
     "build:package": "run-p build:package:*",
+    "build:package:umd": "webpack --config webpack.package.config.js",
     "build:package:cjs": "TARGET=cjs babel src --out-dir lib/cjs --source-maps --ignore *.test.js",
     "build:package:es": "TARGET=es babel src --out-dir lib/es --source-maps --ignore *.test.js",
     "clean": "rm -rf public",
