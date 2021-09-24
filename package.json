@@ -1,6 +1,6 @@
 {
   "name": "netlify-cms-widget-inline-select",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "description": "Widget for radios and inline multi-checkboxes in Netlify CMS.",
   "keywords": [
     "checkbox",

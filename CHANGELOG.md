@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.5.0](https://github.com/karolis-sh/netlify-cms-widget-inline-select/compare/v1.4.0...v1.5.0) (2021-09-24)
+
+
+### Features
+
+* add umd output ([40b9563](https://github.com/karolis-sh/netlify-cms-widget-inline-select/commit/40b9563ab1cc348705b9fd6d307712c87a61b0fa))
+
 ## [1.4.0](https://github.com/karolis-sh/netlify-cms-widget-inline-select/compare/v1.3.5...v1.4.0) (2021-09-24)
 
 
