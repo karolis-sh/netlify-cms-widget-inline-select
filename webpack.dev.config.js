@@ -7,10 +7,13 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'public'),
   },
+  resolve: {
+    extensions: ['.js', '.jsx'],
+  },
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.jsx?$/,
         use: 'source-map-loader',
         enforce: 'pre',
       },
